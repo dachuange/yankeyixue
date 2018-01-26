@@ -1589,3 +1589,68 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000049s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000098s ]
 
+[ 2018-01-26T16:00:08+08:00 ] 192.168.4.206 /index.php?m=Home&c=News&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000091s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000086s ]
+NOTIC: [8] Use of undefined constant eye_category - assumed 'eye_category' /www/Application/Home/Controller/NewsController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `eye_category` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `eye_category` WHERE ( category_sid = 1 ) ORDER BY category_num  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eye_tag` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eye_tag` WHERE ( tag_sid = 1 ) ORDER BY tag_num  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eye_newsart` [ RunTime:0.0006s ]
+SQL: SELECT `newsart_title`,`newsart_pic`,`newsart_time` FROM `eye_newsart` ORDER BY newsart_reading desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `eye_newsart` ORDER BY newsart_time  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+NOTIC: [8] Undefined index: eye_uid /www/Application/Runtime/Cache/Home/3e24b471de08a8366f7660bb176a5e74.php 第 57 行.
+NOTIC: [8] Undefined index: expert_id /www/Application/Runtime/Cache/Home/3e24b471de08a8366f7660bb176a5e74.php 第 64 行.
+NOTIC: [8] Undefined index: company_id /www/Application/Runtime/Cache/Home/3e24b471de08a8366f7660bb176a5e74.php 第 71 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016397s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016453s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000056s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000094s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000179s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000267s ]
+
+[ 2018-01-26T16:00:09+08:00 ] 192.168.4.206 /index.php?m=Home&c=Ophtha&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000085s ]
+NOTIC: [8] Use of undefined constant eye_category - assumed 'eye_category' /www/Application/Home/Controller/OphthaController.class.php 第 7 行.
+SQL: SHOW COLUMNS FROM `eye_category` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `eye_category` WHERE ( category_sid = 0 ) ORDER BY category_num  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eye_tag` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `eye_tag` WHERE ( tag_sid = 0 ) ORDER BY tag_num  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `eye_medart` [ RunTime:0.0003s ]
+SQL: SELECT `medart_id`,`medart_title`,`medart_pic`,`medart_time` FROM `eye_medart` ORDER BY medart_reading desc LIMIT 2   [ RunTime:0.0001s ]
+SQL: SELECT `medart_id`,`medart_title`,`medart_time`,`medart_pic` FROM `eye_medart` ORDER BY medart_time  [ RunTime:0.0001s ]
+NOTIC: [8] Undefined index: p /www/Application/Home/Controller/OphthaController.class.php 第 35 行.
+SQL: SELECT * FROM `eye_medart` ORDER BY medart_time LIMIT 0,5   [ RunTime:0.0001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `eye_medart` LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000117s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+NOTIC: [8] Undefined index: eye_uid /www/Application/Runtime/Cache/Home/51769fd896eae158a85f485f78b6cd74.php 第 57 行.
+NOTIC: [8] Undefined index: expert_id /www/Application/Runtime/Cache/Home/51769fd896eae158a85f485f78b6cd74.php 第 64 行.
+NOTIC: [8] Undefined index: company_id /www/Application/Runtime/Cache/Home/51769fd896eae158a85f485f78b6cd74.php 第 71 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014354s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014421s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000046s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000090s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000040s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000081s ]
+
