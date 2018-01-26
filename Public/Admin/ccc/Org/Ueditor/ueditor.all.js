@@ -10329,7 +10329,7 @@ UE.plugins['list'] = function () {
             if(lastChild && lastChild.type == 'text' && /^\s*$/.test(lastChild.data)){
                 p.removeChild(lastChild)
             }
-        });
+        };
         var orderlisttype = {
                 'num1':/^\d+\)/,
                 'decimal':/^\d+\./,

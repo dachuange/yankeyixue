@@ -20,6 +20,17 @@
  * @param mixed $default 默认值
  * @return mixed
  */
+//去除css js样式
+function ezk_cutstr_html($string){
+    $string = strip_tags($string);
+    $string = preg_replace ('/\n/is', '', $string);
+    $string = preg_replace ('/ |　/is', '', $string);
+    $string = preg_replace ('/&nbsp;/is', '', $string);
+
+    preg_match_all("/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/", $string, $t_string);
+
+    return $string;
+}
 function C($name=null, $value=null,$default=null) {
     static $_config = array();
     // 无参数时获取所有

@@ -2315,9 +2315,9 @@ Very common low res
 	.post_item h3.post_title{
 		font-size: 1.5714em;
     }
-	.post_info .post_info_item{
+	/*.post_info .post_info_item{
 		display: block;
-    }
+    }*/
 	.post_info .post_info_item:before{
 		display: none !important;
     }

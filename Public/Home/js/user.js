@@ -1,5 +1,4 @@
-/**个人中心切换**/
-	 		oDiv=document.getElementById("user_wrap");
+/**切换**/
 			aBtn=document.getElementsByClassName("user_navli");
 			aDiv=document.getElementsByClassName("user_navmain");
 			for(i=0;i<aBtn.length;i++)
@@ -14,6 +13,26 @@
 					}
 					this.className='user_navli active';
 					aDiv[this.index].style.display='block';
+				}
+				
+			}	
+
+
+/**切换**/
+			oBtn=document.getElementsByClassName("userImgTabLi");
+			oDiv=document.getElementsByClassName("userImgBoxLi");
+			for(i=0;i<oBtn.length;i++)
+			{
+				oBtn[i].index=i;
+				oBtn[i].onclick=function()
+				{
+					for(var i=0;i<oBtn.length;i++)
+					{
+						oBtn[i].className=' userImgTabLi column-1_3';
+						oDiv[i].style.display='none';
+					}
+					this.className='userImgTabLi column-1_3 active';
+					oDiv[this.index].style.display='block';
 				}
 				
 			}	

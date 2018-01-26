@@ -4,13 +4,44 @@
         <div class="top_panel_top before">
             <div class="content_wrap clearfix">
                 <div class="top_panel_top_contact_area">
-                    请致电400-6756-168<!--或<a href="support@qiye.com">support@qiye.com与我们联系</a> -->与我们联系
+                    请致电<a>400-6756-168</a>与我们联系
                 </div>
                 <div class="top_panel_top_user_area">
                     <ul id="menu_user" class="menu_user_nav">
+                        <?php
+                         if($_SESSION['eye_uid']){
+                         ?>
                         <li class="menu_user_login">
-                            <a href="login.html" class="popup_link popup_login_link icon-user"></a>
+                            <a href="{:U('Userlogin/center')}" class="popup_link"><i class="popup_login_link icon-user"></i>你好，<?php echo $_SESSION['eye_username'] ?></a>
                         </li>
+                        <li class="menu_user_login">
+                            <a href="{:U('Userlogin/logout')}" class="popup_link"><i class="popup_login_link icon-user"></i>退出</a>
+                        </li>
+                        <?php }elseif($_SESSION['expert_id']){ ?>
+                        <li class="menu_user_login">
+                            <a href="{:U('Expert/center')}" class="popup_link"><i class="popup_login_link icon-user"></i>你好，<?php echo $_SESSION['expert_username'] ?></a>
+                        </li>
+                        <li class="menu_user_login">
+                            <a href="{:U('Userlogin/logout')}" class="popup_link"><i class="popup_login_link icon-user"></i>退出</a>
+                        </li>
+                        <?php }elseif($_SESSION['company_id']){ ?>
+                        <li class="menu_user_login">
+                            <a href="{:U('Company/center')}" class="popup_link"><i class="popup_login_link icon-user"></i>你好，<?php echo $_SESSION['company_name'] ?></a>
+                        </li>
+                        <li class="menu_user_login">
+                            <a href="{:U('Userlogin/logout')}" class="popup_link"><i class="popup_login_link icon-user"></i>退出</a>
+                        </li>
+                        <?php }else{ ?>
+                        <li class="menu_user_login">
+                            <a href="{:U('Userlogin/index')}" class="popup_link"><i class="popup_login_link icon-user"></i>个人登录</a>
+                        </li>
+                        <li class="menu_user_login">
+                            <a href="{:U('Expert/login')}" class="popup_link"><i class="popup_login_link icon-user-add"></i>专家登录</a>
+                        </li>
+                        <li class="menu_user_login">
+                            <a href="{:U('Company/login')}" class="popup_link"><i class="popup_login_link icon-users"></i>企业登录</a>
+                        </li>
+                        <?php } ?>
                     </ul>
                     <div class="top_panel_top_socials">
                         <div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_tiny">
@@ -28,12 +59,9 @@
                     </div>
                     <div class="top_panel_top_search">
                         <div class="search_wrap search_style_regular search_state_closed">
-                            <div class="search_form_wrap">
-                                <form role="search" method="get" class="search_form" action="#">
-                                    <button type="submit" class="search_submit icon-search" title="Open search"></button>
-                                    <input type="text" class="search_field" placeholder="搜索" value="" name="s" />
-                                </form>
-                            </div>
+                            <a href="#" class="social_icons social-help">
+                                <span class="icon-help"></span>
+                            </a>
                             <div class="search_results widget_area scheme_original">
                                 <a class="search_results_close icon-cancel"></a>
                                 <div class="search_results_content"></div>
@@ -44,37 +72,7 @@
             </div>
         </div>
         <!-- /登录前  Top panel : Bar -->
-        <!--登录后  Top panel : Bar -->
-        <div class="top_panel_top after">
-            <div class="content_wrap clearfix">
-                <div class="top_panel_top_contact_area">
-                    请致电400 123-4567或<a href="support@qiye.com">support@qiye.com与我们联系</a>
-                </div>
-                <div class="top_panel_top_user_area">
-                    <div class="top_panel_top_socials">
-                        <div class="user_avatar login_after">
-                            <a href="JavaScript:;">刘刚</a>欢迎您！
-                        </div>
-                    </div>
-                    <div class="top_panel_top_search">
-                        <div class="search_wrap search_style_regular search_state_closed">
-                            <div class="search_form_wrap">
-                                <form role="search" method="get" class="search_form" action="#">
-                                    <button type="submit" class="search_submit icon-search" title="Open search"></button>
-                                    <input type="text" class="search_field" placeholder="搜索" value="" name="s" />
-                                </form>
-                            </div>
-                            <div class="search_results widget_area scheme_original">
-                                <a class="search_results_close icon-cancel"></a>
-                                <div class="search_results_content"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /登录后 Top panel : Bar -->
-        <!-- Menu area -->
+        <!-- 菜单 Menu area -->
         <div class="top_panel_middle">
             <div class="content_wrap">
                 <!-- Contact logo -->
@@ -92,11 +90,11 @@
                     <nav class="menu_main_nav_area">
                         <ul id="menu_main" class="menu_main_nav">
                             <li><a href="{:U('Index/index')}">首页</a></li>
-                            <li><a href="{:U('Ophtha/index')}">眼科医学</a></li>
                             <li><a href="{:U('News/index')}">新闻中心</a></li>
+                            <li><a href="{:U('Ophtha/index')}">眼科医学</a></li>
                             <li><a href="{:U('Expert/index')}">眼科专家</a></li>
-                            <li><a href="{:U('News/index')}">眼科历史</a></li>
-                            <li><a href="{:U('Contact/index')}">联系我们</a></li>
+                            <li><a href="{:U('History/index')}">眼科历史</a></li>
+                            <li><a href="{:U('Company/index')}">医疗企业</a></li>
                             <li><a href="{:U('Rescue/index')}">救助中心</a></li>
                         </ul>
                     </nav>
@@ -104,6 +102,47 @@
                 <!-- /Main Menu -->
             </div>
         </div>
-        <!-- /Menu area -->
+        <!-- /菜单 Menu area -->
     </div>
 </header>
+<!-- /Header -->
+<!-- Header Mobile -->
+<div class="header_mobile">
+    <div class="content_wrap">
+        <div class="menu_button icon-menu"></div>
+        <div class="logo">
+            <a href="index.html">
+                <img src="Public/Home/images/logo.png" class="logo_main" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="side_wrap">
+        <div class="close">Close</div>
+        <div class="panel_top">
+            <nav class="menu_main_nav_area">
+                <ul id="menu_main_mobile" class="menu_main_nav">
+                    <li><a href="{:U('Index/index')}">首页</a></li>
+
+                    <li><a href="{:U('News/index')}">新闻中心</a></li>
+                    <li><a href="{:U('Ophtha/index')}">眼科医学</a></li>
+                    <li><a href="{:U('Expert/index')}">眼科专家</a></li>
+                    <li><a href="{:U('History/index')}">眼科历史</a></li>
+                    <li><a href="{:U('Company/index')}">医疗企业</a></li>
+                    <li><a href="{:U('Rescue/index')}">救助中心</a></li>
+                </ul>
+            </nav>
+            <!-- Login -->
+            <div class="login">
+                <a href="login.html" class="popup_link popup_login_link icon-user">登录</a>
+            </div>
+            <div class="login">
+                <a href="login_expert.html" class="popup_link popup_login_link icon-user">专家登录</a>
+            </div>
+            <div class="login">
+                <a href="login_company.html" class="popup_link popup_login_link icon-user">企业登录</a>
+            </div>
+            <!-- /Login -->
+        </div>
+    </div>
+    <div class="mask"></div>
+</div>
